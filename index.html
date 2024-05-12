@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBloom</title>
+    <script src="/travel_recommendation.js" defer></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #153448;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav_logo h2 {
+            margin: 0;
+        }
+
+        .nav_links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav_links ul li {
+            margin-right: 20px;
+        }
+
+        .nav_links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            background-color: #fff;
+            padding: 5px 20px;
+            border-radius: 12rem;
+        }
+
+        form input {
+            padding: 0 20px;
+            border: none;
+            outline: none;
+        }
+
+        form button {
+            padding: 10px 15px;
+            background-color: #DFD0B8;
+            color: #5f5f5f; 
+            border: none;
+            cursor: pointer;
+            border-radius: 12rem;
+        }
+
+        .hero{
+            background-image: url('https://images.unsplash.com/photo-1715292453587-35be6ed4ce07?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero_gradient{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .hero_content{
+            max-width: 1120px;
+            width: 100%;
+            margin: 0 auto;
+            z-index: 100;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero_content .hero_content-left{
+            grid-column: span 2;
+        }
+
+        .hero_content h1{
+            font-size: 5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .hero_content p {
+            width: 40%;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .hero_content button {
+            padding: 10px 20px;
+            background-color: #DFD0B8;
+            color: #5f5f5f;
+            border: none;
+            cursor: pointer;
+            border-radius: 12rem;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .select_input{
+            padding: 5px 10px;
+            border: none;
+            outline: none;
+        }
+
+        .hero_content .hero_content-right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero_content .hero_content-right .destination_img img{
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .hero_content .hero_content-right .destination_info{
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+            border-radius: 10px;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .hero_content .hero_content-right .destination_info p{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero_content .hero_content-right .destination_info button{
+            width: 100%;
+            background: #fff;
+            color: #5f5f5f;
+            padding: 10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav_logo">
+                <h2>TravelBloom</h2>
+            </div>
+
+            <div class="nav_links">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li><a href="/about-us.html">About us</a></li>
+                    <li><a href="/contact-us.html">Contact us</a></li>
+                </ul>
+            </div>
+
+                <form class="nav_search" id="search_form">
+                    <input type="text" id="search_input" placeholder="Enter a destination or keyword">
+                    <select name="search_type" id="search_type" class="select_input">
+                        <option value="countries">Countries</option>
+                        <option value="temples">Temples</option>
+                        <option value="beaches">Beaches</option>
+                    </select>
+                    <button type="submit">Search</button>
+                    <button type="button" id="clear_form_button">Clear</button>
+                </form>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero_content">
+            <div class="hero_content-left">
+                <h1>EXPLORE DREAM DESTINATION</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro inventore obcaecati dignissimos maiores, dolore voluptates.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro inventore obcaecati dignissimos maiores, dolore voluptates.
+                </p>
+                <button type="button">BOOK NOW</button>
+            </div>
+
+            <div class="hero_content-right" id="recommendation_search">
+                <!-- <div class="destination_img">
+                    <img src="/images/sydney-australia.jpg" alt="sydney-australia">
+                </div>
+
+                <div class="destination_info">
+                    <h3 class="name">Sydney, Australia</h3>
+                    <p class="description">
+                        A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."
+                    </p>
+
+                    <button type="button">Visit</button>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="hero_gradient"/>
+
+    </section>
+</body>
+</html>
