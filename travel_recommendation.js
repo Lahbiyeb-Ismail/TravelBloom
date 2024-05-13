@@ -1,8 +1,11 @@
 const searchForm = document.getElementById('search_form');
 const searchInput = document.getElementById('search_input');
 const clearFormButton = document.getElementById('clear_form_button');
-// const searchType = document.getElementById('search_type');
 const recommendationSearch = document.getElementById('recommendation_search');
+
+searchForm.addEventListener('submit', handleFormSubmit);
+
+clearFormButton.addEventListener('click', handleFormReset);
 
 async function fetchData() {
   try {
@@ -87,6 +90,7 @@ function generateHtmlTemplate(data) {
 }
 
 async function handleFormSubmit(e) {
+  console.log('Form submitted');
   e.preventDefault();
 
   const searchResults = await getSearchResults();
@@ -107,6 +111,4 @@ function handleFormReset() {
   recommendationSearch.innerHTML = '';
 }
 
-searchForm.addEventListener('submit', handleFormSubmit);
 
-clearFormButton.addEventListener('click', handleFormReset);
