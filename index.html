@@ -21,6 +21,7 @@
             position: sticky;
             top: 0;
             left: 0;
+            z-index: 1000;
         }
 
         nav {
@@ -79,8 +80,6 @@
             height: calc(100vh - 70px);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: start;
             color: #fff;
             position: relative;
         }
@@ -97,6 +96,7 @@
         .hero_content{
             max-width: 1120px;
             width: 100%;
+            height: 100%;
             margin: 0 auto;
             z-index: 100;
             display: grid;
@@ -142,8 +142,9 @@
         .hero_content .hero_content-right{
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            height: 95%;
+            overflow: auto;
         }
 
         .hero_content .hero_content-right .destination_img img{
@@ -193,11 +194,11 @@
 
                 <form class="nav_search" id="search_form">
                     <input type="text" id="search_input" placeholder="Enter a destination or keyword">
-                    <select name="search_type" id="search_type" class="select_input">
+                    <!-- <select name="search_type" id="search_type" class="select_input">
                         <option value="countries">Countries</option>
                         <option value="temples">Temples</option>
                         <option value="beaches">Beaches</option>
-                    </select>
+                    </select> -->
                     <button type="submit">Search</button>
                     <button type="button" id="clear_form_button">Clear</button>
                 </form>
@@ -216,18 +217,6 @@
             </div>
 
             <div class="hero_content-right" id="recommendation_search">
-                <!-- <div class="destination_img">
-                    <img src="/images/sydney-australia.jpg" alt="sydney-australia">
-                </div>
-
-                <div class="destination_info">
-                    <h3 class="name">Sydney, Australia</h3>
-                    <p class="description">
-                        A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."
-                    </p>
-
-                    <button type="button">Visit</button>
-                </div> -->
             </div>
         </div>
         
